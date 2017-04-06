@@ -3,6 +3,7 @@ function setup() {
 }
 
 function draw() {
+   createCanvas(windowWidth,windowHeight);
   background(random(255),random(255),random(255));
   
   fill(random(255),random(255),random(255));
