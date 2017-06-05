@@ -1,28 +1,26 @@
 function Knife() {
   this.xpos = 600;
   this.ypos = 450;
-  this.isGrabbed=false;
-
+  this.dead=false;
   this.fall= function() {
-    if (this.ypos<700)
+    if (this.ypos<700) {
       this.ypos+=10;
+    }
+    if (this.xpos>100 && this.xpos<200 && this.ypos>500) {
+      this.ypos=2000;
+      this.dead=true;
+    }
   }
 
   this.move= function() {
     if (mouseIsPressed) {
-      
-      console.log(mouseX+" "+ mouseY+ " " + this.xpos+ " "+ this.ypos);
-      if (mouseX<(this.xpos+15) && (this.xpos-5)<mouseX && (this.ypos+35)<mouseY && mouseY<(this.ypos-5)) {
-        console.log("pressed");
-        this.xpos=mouseX;
-        this.ypos=mouseY;
-      }
+      this.xpos=mouseX;
+      this.ypos=mouseY;
     } else this.fall();
   }
 
   this.display= function() {
     this.move();
-
     fill(125);
     rect(this.xpos, this.ypos, 8, 15);
     fill(200);
