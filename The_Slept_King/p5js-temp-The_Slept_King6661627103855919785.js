@@ -15,6 +15,10 @@ function setup() {
   createCanvas(1200, 900);
 }
 
+function keyPressed(){
+  text("It didnt work", 470,380);
+}
+
 function draw() {
 
   noStroke();
@@ -28,7 +32,7 @@ function draw() {
     knife.display();
   }else{
     
-    image(killer, 800, 500,404,520);
+    image(killer, 700, 400,504,624);
     vein.display();
     textSize(50);
     fill(255);
